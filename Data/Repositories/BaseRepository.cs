@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Linq.Expressions;
 using Data.Contexts;
+using Data.Entities;
 using Data.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
@@ -94,6 +95,11 @@ namespace Data.Repositories
                 return false;
             }
             return false;
+        }
+
+        public virtual async Task<bool> ExistsAsync(Expression<Func<TEntity, bool>> expression)
+        {
+            return await _dbSet.AnyAsync(expression);
         }
     }
 }
