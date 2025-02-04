@@ -12,6 +12,8 @@ builder.Services.AddOpenApi();
 builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\DatabaseProjects\DataStorage_Assignment\Data\Databases\datastorage_assignment_local_db.mdf;Integrated Security=True"));
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
+builder.Services.AddScoped<IStatusTypeRepository, StatusTypeRepository>();
+builder.Services.AddScoped<IStatusTypeService, StatusTypeService>();
 
 
 
