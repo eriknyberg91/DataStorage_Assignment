@@ -48,3 +48,4 @@ public class StatusTypeService(IStatusTypeRepository statusTypeRepository) : ISt
         return await _statusTypeRepository.ExistsAsync(expression);
     }
 }
+
