@@ -23,10 +23,10 @@ namespace Presentation.WebApi.Controllers
                     return Conflict("Project with same title already exists.");
                 }
 
-                var product = await _projectService.CreateProjectAsync(form);
-                if (product != null)
+                var project = await _projectService.CreateProjectAsync(form);
+                if (project != null)
                 {
-                    return Ok(product);
+                    return Ok(project);
                 }
             }
             return BadRequest();
@@ -39,22 +39,40 @@ namespace Presentation.WebApi.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetProduct(int id)
+        public async Task<IActionResult> GetProject(int id)
         {
-            var product = await _projectService.GetProjectAsync(x => x.Id == id);
-            if (product != null)
+            var project = await _projectService.GetProjectAsync(x => x.Id == id);
+            if (project != null)
             {
-                return Ok(product);
+                return Ok(project);
             }
             return NotFound();
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteProduct(int id)
+        public async Task<IActionResult> DeleteProject(int id)
         {
             if (await _projectService.DeleteProjectAsync(id))
             {
                 return Ok();
+            }
+            return NotFound();
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateProject(int id, ProjectUpdateForm form)
+        {
+            if (ModelState.IsValid)
+            {
+                var project = await _projectService.GetProjectAsync(x => x.Id == id);
+                if (project != null)
+                {
+                    var updatedProject = await _projectService.UpdateProjectAsync(id, form);
+                    if (updatedProject != false)
+                    {
+                        return Ok(updatedProject);
+                    }
+                }
             }
             return NotFound();
         }
