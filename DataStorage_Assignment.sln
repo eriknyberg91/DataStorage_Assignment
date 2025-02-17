@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Busine
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation.WebApi", "Presentation.WebApi\Presentation.WebApi.csproj", "{4C704C21-51E3-427A-9622-E6A88BC7D2C8}"
 EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "reactproject1", "reactproject1\reactproject1.esproj", "{5DFA6646-0A6E-4AC7-A67D-C2D669CC08C6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,12 @@ Global
 		{4C704C21-51E3-427A-9622-E6A88BC7D2C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C704C21-51E3-427A-9622-E6A88BC7D2C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C704C21-51E3-427A-9622-E6A88BC7D2C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DFA6646-0A6E-4AC7-A67D-C2D669CC08C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DFA6646-0A6E-4AC7-A67D-C2D669CC08C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DFA6646-0A6E-4AC7-A67D-C2D669CC08C6}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{5DFA6646-0A6E-4AC7-A67D-C2D669CC08C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DFA6646-0A6E-4AC7-A67D-C2D669CC08C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DFA6646-0A6E-4AC7-A67D-C2D669CC08C6}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
