@@ -1,19 +1,18 @@
-import { useState } from "react";
-import ProjectComponent from "./Components/ProjectComponent";
-import ProjectList from "./Components/ProjectList";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ProjectList from "./pages/ProjectList";
+import CreateProject from "./pages/CreateProject";
+import EditProject from "./pages/EditProject";
 
+//All Frontend is created with the help of ChatGPT
 function App() {
-    const [refresh, setRefresh] = useState(false);
-
-    const handleProjectCreated = () => {
-        setRefresh((prev) => !prev);
-    };
-
     return (
-        <>
-            <ProjectComponent onProjectCreated={handleProjectCreated} />
-            <ProjectList refresh={refresh} />
-        </>
+        <Router>
+            <Routes>
+                <Route path="/" element={<ProjectList />} />
+                <Route path="/projects/create" element={<CreateProject />} />
+                <Route path="/projects/edit/:id" element={<EditProject />} />
+            </Routes>
+        </Router>
     );
 }
 
